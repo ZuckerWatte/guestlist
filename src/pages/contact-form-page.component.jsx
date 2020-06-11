@@ -1,5 +1,6 @@
 import React from "react";
 import FormInput from "../components/form-input.component";
+import "./contact-form-page.styles.scss";
 
 const ContactFormPage = () => (
   <div className="contact-form-page">

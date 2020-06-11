@@ -1,0 +1,29 @@
+.group {
+  position: relative;
+  margin: 1rem 0;
+
+  .form-input {
+    background: none;
+    background-color: white;
+    color: gray;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+    margin: 1rem 0;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid red;
+    }
+  }
+
+  .form-input-label {
+    color: gray;
+    font-size: 0.85rem;
+    font-weight: normal;
+  }
+}

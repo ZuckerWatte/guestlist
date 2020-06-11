@@ -1,4 +1,5 @@
 import React from "react";
+import FormInput from "../components/form-input.component";
 
 const ContactFormPage = () => (
   <div className="contact-form-page">
@@ -9,30 +10,12 @@ const ContactFormPage = () => (
       zu erfassen:
     </span>
     <form className="contact-form">
-      <div>
-        <input className="form-input" />
-        <label className="form-input-label">Vorname</label>
-      </div>
-      <div>
-        <input className="form-input" />
-        <label className="form-input-label">Nachname</label>
-      </div>
-      <div>
-        <input className="form-input" />
-        <label className="form-input-label">Straße</label>
-      </div>
-      <div>
-        <input className="form-input" />
-        <label className="form-input-label">Hausnummer</label>
-      </div>
-      <div>
-        <input className="form-input" />
-        <label className="form-input-label">Postleitzahl</label>
-      </div>
-      <div>
-        <input className="form-input" />
-        <label className="form-input-label">Ort</label>
-      </div>
+      <FormInput label="Vorname" name="firstname" type="text" required />
+      <FormInput label="Nachname" name="lastname" type="text" required />
+      <FormInput label="Straße" name="street" type="text" required />
+      <FormInput label="Hausnummer" name="streetnumber" type="text" required />
+      <FormInput label="Postleitzahl" name="zipcode" type="text" required />
+      <FormInput label="Ort" name="city" type="text" />
       <button type="submit">Speichern</button>
     </form>
   </div>

@@ -1,10 +1,16 @@
 import React from "react";
 import "./form-input.styles.scss";
 
-const FormInput = ({ label, ...inputAttributes }) => (
+const FormInput = ({ onChange, label, ...inputAttributes }) => (
   <div className="group">
-    <input className="form-input" {...inputAttributes} />
-    <label className="form-input-label">{label}</label>
+    <input className="form-input" {...inputAttributes} onChange={onChange} />
+    <label
+      className={` ${
+        inputAttributes.value.length ? "shrink" : ""
+      } form-input-label`}
+    >
+      {label}
+    </label>
   </div>
 );
 

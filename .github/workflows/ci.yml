@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build_push:
+  build_and_push:
     runs-on: ubuntu-latest
     steps:
     - name: login to heroku registry

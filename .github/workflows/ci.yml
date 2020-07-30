@@ -15,8 +15,8 @@ build_push:
     run: heroku container:login  
   - name: build and push
     run: echo "build the image and push it to the heroku registry"
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
     run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
 
 release:

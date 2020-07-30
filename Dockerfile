@@ -6,4 +6,4 @@ RUN npm ci
 
 CMD ["npm", "start"]
 
-EXPOSE 3000
+#EXPOSE 3000

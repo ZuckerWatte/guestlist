@@ -9,6 +9,7 @@ jobs:
   build_and_push:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: login to heroku registry
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}

@@ -10,23 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: login to heroku registry
-      run: echo "logging in to heroku registry"
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login  
+      run: |
+        echo "logging in to heroku registry"
+        heroku container:login
     - name: build and push
-      run: echo "build the image and push it to the heroku registry"
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+      run: |
+        echo "build the image and push it to the heroku registry"
+        heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
 
   release:
     runs-on: ubuntu-latest
     needs: build_and_push
     steps:
       - name: release
-        run: echo "release the image to the heroku app"
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
+        run: |
+          echo "release the image to the heroku app"
+          heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
 

@@ -2,8 +2,12 @@ FROM node:14
 
 COPY ./ app
 WORKDIR "/app"
-RUN npm ci
+RUN npm ci --verbose
+RUN install serve -g -silent
+RUN npm run build
 
-CMD ["npm", "start"]
+CMD ["sh", "-c", "serve -l tcp://0.0.0.0:${PORT} -s /app/build"]
+
+#CMD ["npm", "start"]
 
 #EXPOSE 3000
